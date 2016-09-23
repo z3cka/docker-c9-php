@@ -2,16 +2,6 @@
 FROM z3cka/c9
 MAINTAINER Casey Grzecka <c@sey.gr>
 
-ARG c9port=80
-ARG user=c9
-ARG pass=rules
-ARG workspace="/workspace"
-
-ENV c9port $c9port
-ENV user $user
-ENV pass $pass
-ENV workspace $workspace
-
 RUN apt update
 RUN apt install -y php5 php5-dev php-pear autoconf automake curl libcurl3-openssl-dev build-essential libxslt1-dev re2c libxml2 libxml2-dev php5-cli php5-curl bison libbz2-dev libreadline-dev
 RUN apt install -y libfreetype6 libfreetype6-dev libpng12-0 libpng12-dev libjpeg-dev libgd-dev libgd3 libxpm4 libltdl7 libltdl-dev
@@ -38,5 +28,3 @@ RUN ln -s /etc/php5/mods-available/xdebug.init /etc/php5/cli/conf.d/30-xdebug.in
 
 EXPOSE 80
 EXPOSE 8080
-
-CMD /root/.nvm/versions/node/v4.5.0/bin/node /c9/server.js -p $c9port -a $user:$pass --listen 0.0.0.0 -w $workspace
