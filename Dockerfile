@@ -3,7 +3,7 @@ FROM z3cka/c9:stretch
 MAINTAINER Casey Grzecka <c@sey.gr>
 
 RUN apt update
-RUN apt install -y php7.0 php7.0-dev php-pear autoconf automake curl libcurl3-openssl-dev build-essential libxslt1-dev re2c libxml2 libxml2-dev php7.0-cli php7.0-curl bison libbz2-dev libreadline-dev
+RUN apt install -y php7.0 php7.0-dev php-pear autoconf automake curl libcurl3-openssl-dev libcurl4-gnutls-dev build-essential libxslt1-dev re2c libxml2 libxml2-dev php7.0-cli php7.0-curl bison libbz2-dev libreadline-dev
 RUN apt install -y libfreetype6 libfreetype6-dev libjpeg-dev libgd-dev libgd3 libxpm4 libltdl7 libltdl-dev
 RUN apt install -y libssl-dev openssl
 RUN apt install -y gettext libgettextpo-dev libgettextpo0
