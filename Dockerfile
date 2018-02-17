@@ -1,5 +1,5 @@
 # c9+php
-FROM z3cka/c9
+FROM z3cka/c9:jessie
 MAINTAINER Casey Grzecka <c@sey.gr>
 
 RUN apt update
@@ -21,10 +21,10 @@ RUN mkdir /root/.phpbrew/bin
 RUN phpbrew app get composer
 RUN ln -s /root/.phpbrew/bin/composer /usr/local/bin/composer
 
-RUN pecl install xdebug
-RUN echo "zend_extension=/usr/lib/php5/20131226/xdebug.so" >> /etc/php5/mods-available/xdebug.init
-RUN echo "xdebug.remote_enable=1" >> /etc/php5/mods-available/xdebug.init
-RUN ln -s /etc/php5/mods-available/xdebug.init /etc/php5/cli/conf.d/30-xdebug.ini
+# RUN pecl install xdebug
+# RUN echo "zend_extension=/usr/lib/php5/20131226/xdebug.so" >> /etc/php5/mods-available/xdebug.init
+# RUN echo "xdebug.remote_enable=1" >> /etc/php5/mods-available/xdebug.init
+# RUN ln -s /etc/php5/mods-available/xdebug.init /etc/php5/cli/conf.d/30-xdebug.ini
 
 EXPOSE 80
 EXPOSE 8080
